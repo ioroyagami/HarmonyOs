@@ -1,0 +1,23 @@
+apply plugin: 'com.huawei.ohos.hap'
+ohos {
+    signingConfigs {
+        debug {
+            storeFile file('C:/Users/z00517818/Documents/HarmonyOs/harmonykey.p12')
+            storePassword '0000001BA6D24659F8E596F1122807762C465B179B0BC6EDE55B755574271B6150E5323F81859251C94BF8'
+            keyAlias 'myApplication_debug'
+            keyPassword '0000001BBA99572CC9E40E0F37A36170EEBE8773C112A6E5670C159BE6BA5C86FE6EEF7624BF1BDEEA2782'
+            signAlg 'SHA256withECDSA'
+            profile file('C:/Users/z00517818/Documents/HarmonyOs/Provision_1Debug.p7b')
+            certpath file('C:/Users/z00517818/Documents/HarmonyOs/testCSR.cer')
+        }
+    }
+    compileSdkVersion 4
+    defaultConfig {
+        compatibleSdkVersion 4
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar', '*.har'])
+    testCompile 'junit:junit:4.12'
+}
